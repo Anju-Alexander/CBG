@@ -18,8 +18,8 @@ pipeline {
               steps {
                   script{
                      echo 'build'
-                     sh 'maven clean install'
-                     sh 'maven test'
+                     sh 'mvn clean install'
+                     sh 'mvn test'
                      echo 'build stable!'
                   }
 
