@@ -1,7 +1,9 @@
 
 pipeline {
-    tools {
-    maven 'Maven1' // Replace 'MavenInstallationName' with the name you provided in the Jenkins configuration
+    agent any
+    tools { 
+        maven 'Maven 3.9.1' 
+        
     }
     agent any
 
