@@ -11,6 +11,17 @@ pipeline {
               }
             
         }
+        stage('Build & Push') {
+              steps {
+                  script{
+                     echo 'build'
+                     sh 'mvn clean install'
+                     echo 'build stable!'
+                  }
+
+              }
+            
+        }
        
 
      }
