@@ -16,6 +16,7 @@ pipeline {
                   script{
                      echo 'build'
                      sh 'mvn clean install'
+                     sh 'mvn test'
                      echo 'build stable!'
                   }
 
