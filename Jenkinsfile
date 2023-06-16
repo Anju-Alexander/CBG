@@ -1,3 +1,4 @@
+def myVariable = false
 pipeline {
     agent any
     
@@ -15,10 +16,20 @@ pipeline {
         stage('Build & Push') {
               steps {
                   script{
-                     echo 'build'
-                     sh 'mvn clean install'
-                   
-                     echo 'build stable!'
+                     
+                     commit = sh(returnStdout: true, script: 'git log -1 --oneline').trim()
+                     commitMsg = commit.substring( commit.indexOf(' ') ).trim()
+                      myVariable=commitMsg.contains('[RENOVATE]')
+                     
+                      if(myVariable)
+                    {
+                        echo 'build'
+                        sh 'mvn clean install'
+                    }
+                      else
+                    {
+                     echo 'build Skipped!'
+                    }
                   }
 
               }
