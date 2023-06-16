@@ -6,7 +6,7 @@
 
     <groupId>org.beginsecure.domain.primitives</groupId>
     <artifactId>CustomJar</artifactId>
-    <version>3.0.43</version>
+    <version>3.0.44</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
