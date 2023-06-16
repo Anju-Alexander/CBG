@@ -19,7 +19,7 @@ pipeline {
                      
                      commit = sh(returnStdout: true, script: 'git log -1 --oneline').trim()
                      commitMsg = commit.substring( commit.indexOf(' ') ).trim()
-                      myVariable=commitMsg.contains('[RENOVATE]')
+                      myVariable=commitMsg.contains('RENOVATE')
                      
                       if(myVariable)
                     {
