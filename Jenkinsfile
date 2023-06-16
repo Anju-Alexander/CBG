@@ -52,7 +52,7 @@ pipeline {
                     script{
                         if(myVariable)
                         {
-                            build 'MAAS pipeline'
+                            build 'MAAS'
                             echo 'Built MAAS successfully!'
                         }
                         else
