@@ -46,6 +46,25 @@ pipeline {
               }
             
         }
+        stage('Trigger Pipeline_A')
+        {
+            steps {
+                
+                    script{
+                        if(myVariable)
+                        {
+                            build 'MAAS pipeline'
+                            echo 'Built MAAS successfully!'
+                        }
+                        else
+                        {
+                             echo 'Built MAAS is cancelled'
+                        }
+                    }
+                    
+               
+            }
+        }
        
 
      }
