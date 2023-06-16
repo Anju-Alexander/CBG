@@ -24,7 +24,18 @@ pipeline {
                       if(myVariable)
                     {
                         echo 'build'
-                        sh 'mvn clean install'
+
+                        sh 'git remote add repo_b_push https://github.com/Anju-Alexander/CBG.git'
+                         sh 'mvn build-helper:parse-version versions:set -DnewVersion=\\${parsedVersion.majorVersion}.\\${parsedVersion.minorVersion}.\\${parsedVersion.nextIncrementalVersion} versions:commit'
+                         sh 'mvn clean install'
+                         sh 'git status'
+                         sh 'git add pom.xml'
+                         sh 'git commit -m "updated version"'
+                         echo 'push'
+                         sh 'git push -u repo_b_push main'
+                         sh 'git remote rm repo_b_push'
+                        
+                       
                     }
                       else
                     {
