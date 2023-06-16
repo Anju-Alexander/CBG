@@ -1,4 +1,3 @@
-def mvnHome = tool 'maven'
 pipeline {
     agent any
     
