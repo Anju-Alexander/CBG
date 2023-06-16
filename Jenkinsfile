@@ -18,7 +18,7 @@ pipeline {
                   script{
                      echo 'build'
                      sh 'mvn clean install'
-                     sh 'mvn clean test -B -U'
+                     sh 'mvn test -Dtest=org/beginsecure/domain/primitives/Log4jTest
                      echo 'build stable!'
                   }
 
