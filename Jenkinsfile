@@ -2,7 +2,6 @@ def myVariable = false
 pipeline {
     agent any
     
-  
 
     stages {
         stage('Clone B') {
