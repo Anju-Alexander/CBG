@@ -71,14 +71,16 @@ pipeline {
      }
       post {
           
-            always {
-              echo "I will always execute this!"                    
-            }   
+             
               success {
-                echo 'I succeeded!'
+                echo 'successful!'
+                  slackSend channel: 'repo-a-notifications', message: "Latest build of CBG Repo is succesful!!", tokenCredentialId: 'b4c53875-29c5-4f3a-a5dc-5a97790ff44e'
+
             }
               failure {
-                echo 'I failed :('
+                echo 'failed:('
+                slackSend channel: 'repo-a-notifications', message: "Latest build of CBG Repo has failed!!", tokenCredentialId: 'b4c53875-29c5-4f3a-a5dc-5a97790ff44e'
+
             }
           
       }
