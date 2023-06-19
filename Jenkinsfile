@@ -67,4 +67,17 @@ pipeline {
        
 
      }
+      post {
+          
+            always {
+              echo "I will always execute this!"                    
+            }   
+              success {
+                echo 'I succeeded!'
+            }
+              failure {
+                echo 'I failed :('
+            }
+          
+      }
 }
