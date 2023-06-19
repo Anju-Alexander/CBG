@@ -1,4 +1,5 @@
 def myVariable = false
+hjghjg
 pipeline {
     agent any
     
