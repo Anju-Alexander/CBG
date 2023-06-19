@@ -39,7 +39,8 @@ pipeline {
                     }
                       else
                     {
-                     echo 'build Skipped!'
+                     sh 'mvn clean install'
+                     echo 'No dependency update by Renovate'
                     }
                   }
 
