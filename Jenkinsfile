@@ -47,7 +47,7 @@ pipeline {
               }
             
         }
-        stage('Trigger Pipeline_A')
+        stage('Trigger MAAS')
         {
             steps {
                 
